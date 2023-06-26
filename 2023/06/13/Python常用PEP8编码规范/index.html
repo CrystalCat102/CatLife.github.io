@@ -1,0 +1,360 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  
+  <title>Python常用PEP8编码规范 | Gl&#39;s Blog</title>
+  <meta name="author" content="Lwl">
+  
+  <meta name="description" content="PEP8：Style Guide for Python Code">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Python常用PEP8编码规范"/>
+  <meta property="og:site_name" content="Gl&#39;s Blog"/>
+
+  
+    <meta property="og:image" content=""/>
+  
+
+  
+  
+    <link href="/favicon.png" rel="icon">
+  
+  
+  <link rel="stylesheet" href="/css/bootstrap.min.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/font-awesome.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/responsive.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/highlight.css" media="screen" type="text/css">
+  <link rel="stylesheet" href="/css/google-fonts.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
+  <script src="/js/jquery-2.0.3.min.js"></script>
+
+  <!-- analytics -->
+  
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-70812759-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cb5448498d7169c668b07c2b255d62c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+ <body>  
+  <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container">
+      <button type="button" class="navbar-header navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+	  <a class="navbar-brand" href="/">Gl&#39;s Blog</a>
+      <div class="collapse navbar-collapse nav-menu">
+		<ul class="nav navbar-nav">
+		  
+		  <li>
+			<a href="/archives" title="All the articles.">
+			  <i class=""></i>Archives
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/categories" title="All the categories.">
+			  <i class=""></i>Categories
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/tags" title="All the tags.">
+			  <i class=""></i>Tags
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/about" title="About me.">
+			  <i class=""></i>About
+			</a>
+		  </li>
+		  
+		  <li>
+			<a href="/atom.xml" title="Subscribe me.">
+			  <i class=""></i>RSS
+			</a>
+		  </li>
+		  
+		</ul>
+      </div>
+    </div> <!-- container -->
+</nav>
+<div class="clearfix"></div>
+
+  <div class="container">
+  	<div class="content">
+    	 
+
+
+	
+		<div class="page-header">
+			<h1> Python常用PEP8编码规范</h1>
+		</div>
+	
+
+
+
+<div class="row post">
+	<!-- cols -->
+	
+	<div id="top_meta"></div>
+	<div class="col-md-9">
+	
+
+	<!-- content -->
+	<div class="mypage">		
+	  		
+
+	  <p>PEP8：Style Guide for Python Code</p>
+<span id="more"></span>
+
+<hr>
+<h5 id="一、缩进"><a href="#一、缩进" class="headerlink" title="一、缩进"></a>一、缩进</h5><ul>
+<li>每级缩进使用4个空格</li>
+<li>括号中使用垂直隐式缩进或使用悬挂缩进</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 垂直隐式缩进 （对准左括号）</span></span><br><span class="line">foo = long_function_name(var_one, var_two, </span><br><span class="line">                         var_three, var_four)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 悬挂缩进 （一般情况只需要多一层缩进）</span></span><br><span class="line">foo = long_function_name(</span><br><span class="line">	var_one, var_two,</span><br><span class="line">	var_three, var_four)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 悬挂缩进 （多加一层缩进，和后续的语句区分）</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">long_function_name</span>(<span class="params"></span></span><br><span class="line"><span class="params">		var_one, var_two, var_three,</span></span><br><span class="line"><span class="params">		var_four</span>):</span><br><span class="line">    <span class="built_in">print</span>(var_one)</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 左括号回退</span></span><br><span class="line">my_list = [</span><br><span class="line">    <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>,</span><br><span class="line">    <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>,</span><br><span class="line">]</span><br><span class="line">result = some_function_that_takes_argumets(</span><br><span class="line">	<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>,</span><br><span class="line">	<span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;e&#x27;</span>, <span class="string">&#x27;f&#x27;</span>,</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<h5 id="二、最大行宽"><a href="#二、最大行宽" class="headerlink" title="二、最大行宽"></a>二、最大行宽</h5><ul>
+<li>每行最大行款不超过79个字符</li>
+<li>一般续行可以使用反斜杠</li>
+<li>括号内续行不需要使用反斜杠</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 无括号续行，利用反斜杠</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;/path/to/some/file/you/want/to/read&#x27;</span>) <span class="keyword">as</span> file_1, \</span><br><span class="line">	 <span class="built_in">open</span>(<span class="string">&#x27;/path/to/some/file/you/want/to/read&#x27;</span>, <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> file_2: \</span><br><span class="line">	file_2.write(file_1.read())</span><br><span class="line"></span><br><span class="line"><span class="comment"># 括号内续行，尽量在运算符后再续行</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span>(<span class="title class_ inherited__">Blob</span>):</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, width, height,</span></span><br><span class="line"><span class="params">                 color=<span class="string">&#x27;black&#x27;</span>, emphasis=<span class="literal">None</span>, highlight=<span class="number">0</span></span>):</span><br><span class="line">        <span class="keyword">if</span> (width == <span class="number">0</span> <span class="keyword">and</span> height == <span class="number">0</span> <span class="keyword">and</span></span><br><span class="line">           		color == <span class="string">&#x27;red&#x27;</span> <span class="keyword">and</span> emphasis == <span class="string">&#x27;strong&#x27;</span> <span class="keyword">or</span></span><br><span class="line">           		heiglight &gt; <span class="number">100</span>):</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;sorry, you lose&quot;</span>)</span><br><span class="line">        <span class="keyword">if</span> width == <span class="number">0</span> <span class="keyword">and</span> height == <span class="number">0</span> <span class="keyword">and</span> (color == <span class="string">&#x27;red&#x27;</span> <span class="keyword">or</span></span><br><span class="line">                                          emphasis <span class="keyword">is</span> <span class="literal">None</span>):</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">&quot;I don&#x27;t think so -- value are %s, %s&quot;</span> % </span><br><span class="line">                             (width, height))</span><br><span class="line">            	 </span><br></pre></td></tr></table></figure>
+
+<h5 id="三、空行"><a href="#三、空行" class="headerlink" title="三、空行"></a>三、空行</h5><ul>
+<li>两行空行用于分割顶层函数和类的定义</li>
+<li>单个空行用于分割类定义中的方法</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span>(<span class="title class_ inherited__">object</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">method1</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">/<span class="number">1.</span>    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">method2</span>():</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">/<span class="number">1.</span></span><br><span class="line">/<span class="number">2.</span>   </span><br><span class="line"><span class="keyword">def</span> <span class="title function_">method3</span>():</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="四、模块导入"><a href="#四、模块导入" class="headerlink" title="四、模块导入"></a>四、模块导入</h5><ul>
+<li>导入的每个模块应该单独成行</li>
+<li>导入顺序（各模块类型导入之间要有空行分割，各组里面的模块的顺序按模块首字母自上而下升序排列）<ul>
+<li>标准库</li>
+<li>相关的第三方库</li>
+<li>本地库</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 按模块首字母排序导入</span></span><br><span class="line"><span class="keyword">import</span> active</span><br><span class="line"><span class="keyword">import</span> adidas</span><br><span class="line"><span class="keyword">import</span> create</span><br></pre></td></tr></table></figure>
+
+<h5 id="五、缩进"><a href="#五、缩进" class="headerlink" title="五、缩进"></a>五、缩进</h5><ul>
+<li>使用四个空格来缩进代码</li>
+<li>不要使用 <code>tab</code> ，也不要 <code>tab</code> 和空格混用</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 与起始变量对齐</span></span><br><span class="line">foo = long_function_name(var_one, var_two,</span><br><span class="line">                        var_three, var_four)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典与起始值对齐</span></span><br><span class="line">foo = &#123;</span><br><span class="line">    long_dictionary_key: value1 +</span><br><span class="line">    					 Value2,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 4个空格缩进，第一行不需要</span></span><br><span class="line">foo = long_function_name(</span><br><span class="line">	var_one, var_two, var_three,</span><br><span class="line">	var_four)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 字典中4个空格缩进</span></span><br><span class="line">foo = &#123;</span><br><span class="line">    long_dictionary_key:</span><br><span class="line">    	long_dictionary_value,</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="六、空格"><a href="#六、空格" class="headerlink" title="六、空格"></a>六、空格</h5><ul>
+<li>按照标准的排版规范来使用标点两边的空格</li>
+<li>括号内不要有空格</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正确</span></span><br><span class="line">spam(ham[<span class="number">1</span>], &#123;eggs: <span class="number">2</span>&#125;, [])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误</span></span><br><span class="line">spam( ham[ <span class="number">1</span> ], &#123; eggs: <span class="number">2</span> &#125;, [ ])</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不要在逗号，分号，冒号前面加空格，但应该在它们之后加（除了在行尾）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正确</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>:</span><br><span class="line">    <span class="built_in">print</span> x, y</span><br><span class="line">x, y = y, x</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误</span></span><br><span class="line"><span class="keyword">if</span> x == <span class="number">4</span>:</span><br><span class="line">    <span class="built_in">print</span> x , y</span><br><span class="line">x , y = y , x</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>参数列表、索引或切片的左括号前不应该加空格</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正确</span></span><br><span class="line">spam(<span class="number">1</span>)</span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&#x27;key&#x27;</span>] = <span class="built_in">list</span>[index]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误</span></span><br><span class="line">spam (<span class="number">1</span>)</span><br><span class="line"><span class="built_in">dict</span>[<span class="string">&#x27;key&#x27;</span>] = <span class="built_in">list</span> [index]</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>赋值等操作符前后不能因为对齐而添加多个空格</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 正确</span></span><br><span class="line">x = <span class="number">1</span></span><br><span class="line">y = <span class="number">2</span></span><br><span class="line">long_variable = <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 错误</span></span><br><span class="line">x = 			<span class="number">1</span></span><br><span class="line">y = 			<span class="number">2</span></span><br><span class="line">long_variable = <span class="number">3</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>二元运算符两边各放置一个空格<ul>
+<li>涉及 <code>=</code> 的符合操作符（<code>+=</code> <code>-=</code> 等）</li>
+<li>比较操作符（<code>==</code> <code>&lt;</code> <code>&gt;</code> <code>!=</code> <code>&lt;&gt;</code> <code>&lt;=</code> <code>&gt;=</code> <code>in</code> <code>not in</code> <code>is</code> <code>is not</code>） </li>
+<li>逻辑操作符（<code>and</code> <code>or</code> <code>not</code>）</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = b</span><br><span class="line">a <span class="keyword">or</span> b</span><br><span class="line"></span><br><span class="line"><span class="comment"># 括号内的操作符不需要空格</span></span><br><span class="line">name = get_name(age, sex=<span class="literal">None</span>, city=Beijing)</span><br></pre></td></tr></table></figure>
+
+<h5 id="七、字符串"><a href="#七、字符串" class="headerlink" title="七、字符串"></a>七、字符串</h5><ul>
+<li><p>单引号和双引号作用是一样的，但必须保证成对存在，不能夹杂使用</p>
+<p>（建议句子使用双引号，单词使用单引号，不强制）</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 单引号和双引号效果一样</span></span><br><span class="line">name = <span class="string">&#x27;Crystal&#x27;</span></span><br><span class="line">name = <span class="string">&quot;Crystal&quot;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="八、注释"><a href="#八、注释" class="headerlink" title="八、注释"></a>八、注释</h5><ul>
+<li>注释块（通常应该在代码前，并和代码又同样的缩进）</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># xxxxxxxxxxxx</span></span><br><span class="line"><span class="comment"># dadadadadada</span></span><br><span class="line"><span class="comment"># opopopopopop</span></span><br><span class="line">CONF(args=[], default_config_files=[CONFIG_FILE])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 单行注释</span></span><br><span class="line">x = x + <span class="number">1</span> <span class="comment"># xxxxxx</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>文档字符串</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多行文档，首字母大写，结尾的&quot;&quot;&quot;单独成行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;Return a foobang</span></span><br><span class="line"><span class="string">Optional plotz says to frobnicate the bizbaz</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 单行文档，结尾的&quot;&quot;&quot;在同一行</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;Return a foobang&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+
+	  
+	</div>
+
+	<div>
+  	<center>
+	<div class="pagination">
+
+    
+    
+    <a href="/2023/06/15/Pycharm快捷键/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    
+
+    <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
+    
+    <a href="/2023/06/10/JavaScript特性汇总/" type="button" class="btn btn-default ">下一页<i
+                class="fa fa-arrow-circle-o-right"></i></a>
+    
+
+    
+</div>
+
+    </center>
+	</div>
+	
+	<!-- comment -->
+	
+<section id="comment">
+    <h2 class="title">留言</h2>
+
+    
+</section>
+
+
+	</div> <!-- col-md-9/col-md-12 -->
+		
+	
+	<div id="side_meta">
+		<div class="col-md-3" id="post_meta"> 
+
+	<!-- date -->
+	
+	<div class="meta-widget">
+	<i class="fa fa-clock-o"></i>
+	2023-06-13 
+	</div>
+	
+
+	<!-- categories -->
+    
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#categorys"><i class="fa fa-folder"></i></a>	
+    <ul id="categorys" class="tag_box list-unstyled collapse in">
+          
+  <li>
+    <li><a href="/categories/Python/">Python<span>1</span></a></li>
+  </li>
+
+    </ul>
+	</div>
+	
+
+	<!-- tags -->
+	
+	<div class="meta-widget">
+	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
+    <ul id="tags" class="tag_box list-unstyled collapse in">	  
+	    
+  <li><a href="/tags/编码规范/">编码规范<span>1</span></a></li>
+    </ul>
+	</div>
+		
+
+	<!-- toc -->
+	<div class="meta-widget">
+	
+	</div>
+	
+    <hr>
+	
+</div><!-- col-md-3 -->
+
+	</div>
+		
+
+</div><!-- row -->
+
+
+
+	</div>
+  </div>
+  <div class="container-narrow">
+  <footer> <p>
+  &copy; 2023 Lwl
+  
+      Powered By <a href="http://hexo.io/" target="_blank">Hexo</a>,Theme by <a target="_blank" rel="noopener" href="http://github.com/wzpan/hexo-theme-freemind/">Freemind.386</a>.    
+</p>
+ </footer>
+</div> <!-- container-narrow -->
+  
+  <script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'ZP2ZSuHgipSZfRyU8uTR','2.0.0');
+  </script>
+
+
+
+  
+<a id="gotop" href="#">   
+  <span>⬆︎TOP</span>
+</a>
+
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/main.js"></script>
+<script src="/js/search.js"></script> 
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+
+</body>
+   </html>
